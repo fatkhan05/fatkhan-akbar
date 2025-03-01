@@ -12,7 +12,7 @@
 <body class="bg-[#f8f8f8]"">
   
   <!-- Header Start -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <header class="bg-transparent fixed top-0 left-0 w-full flex items-center z-10">
       <div class="container">
           <div class="flex items-center justify-center">
               <div class="flex items-center px-4">
@@ -22,28 +22,30 @@
                       <span class="hamburger-line transition duration-300 ease-in-out  origin-top-left"></span>
                   </button>
 
-                  <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-500">
-                      <ul class="block lg:flex">
-                          <li class="group">
-                              <a href="#home" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
-                          </li>
-                          <li class="group">
-                              <a href="#about" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">About Me</a>
-                          </li>
-                          <li class="group">
-                              <a href="#portfolio" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
-                          </li>
-                          <li class="group">
-                              <a href="#clients" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Skills</a>
-                          </li>
-                          <li class="group">
-                              <a href="#blog" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Experience</a>
-                          </li>
-                          <li class="group">
-                              <a href="#contact" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
-                          </li>
-                      </ul>
-                  </nav>
+                  <div class="mt-5 bg-white/30 backdrop-blur text-sm border-black/50 rounded-full px-1 py-0 justify-center flex-shrink-0">
+                    <nav id="nav-menu" class="hidden py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-500">
+                        <ul class="block lg:flex">
+                            <li class="group">
+                                <a href="#home" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
+                            </li>
+                            <li class="group">
+                                <a href="#about" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">About Me</a>
+                            </li>
+                            <li class="group">
+                                <a href="#portfolio" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
+                            </li>
+                            <li class="group">
+                                <a href="#clients" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Skills</a>
+                            </li>
+                            <li class="group">
+                                <a href="#blog" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Experience</a>
+                            </li>
+                            <li class="group">
+                                <a href="#contact" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                  </div>
               </div>
           </div>
       </div>
@@ -58,7 +60,7 @@
         <div class="grid justify-center items-center text-center relative">
           <h3><span class="block text-secondary text-2xl font-bold mt-1 lg:text-7xl dark:text-white">Fatkhan Akbar.</span></h3>
           <h1><span class="block text-primary text-4xl font-bold mt-1 lg:text-8xl dark:text-white">Web Developer</span></h1>
-          <p class="font-normal text-slate-400 mb-5 mt-5 text-xl leading-relaxed"><span class="font-bold">Web Developer With ±1 year</span> of experience in web applications. <br> Currently transitioning to Fullstack Developer.</p> 
+          <p class="font-normal text-slate-400 mb-5 mt-5 text-xl leading-relaxed"><span class="font-bold">Web Developer With ±2 years</span> of experience in web applications. <br> Currently transitioning to Fullstack Developer.</p> 
         </div>
         <div class="flex justify-center tech-stack pt-10 gap-5 lg:gap-12 mb-4">
           <a href="https://github.com/fatkhan05"><img src="dist/image/github.svg" class="mr-3 w-10 h-10 lg:w-20 lg:h-20" alt="GitHub"></a>
@@ -71,14 +73,14 @@
   <!-- Hero End -->
 
   <!-- About Start -->
-  <section id="about" class="pt-30 pb-32 lg:pt-36 dark:bg-dark">
+  <!-- <section id="about" class="pt-30 pb-32 lg:pt-36 dark:bg-dark">
     <div class="container">
-        <div class="flex flex-wrap relative">
+        <div class="flex flex-wrap relative md:items-center">
           <img src="dist/image/header-shape.png" class="bottom-0 absolute -z-10 lg:w-200 lg:h-12" style="top: 18%; left: 8%; transform: translate(-50%, -50%);">
             <div class="w-full px-4 mb-10 lg:max-w-2xl">
               <div class="w-3/4 px-0 mb-10 pt-10 lg:w-full">
                   <h4 class="font-bold text-secondary text-2xl lg:text-7xl mb-8">👨‍💻 About Me</h4>
-                  <p class="font-normal lg:text-2xl text-dark leading-relaxed">Hello, I’m Fatkhan! I’m dedicated to continuously expanding my knowledge and skills in <span class="font-bold">web development</span> and learning new technologies. I'm able to develop web applications, consume APIs and strive to deliver high-quality code.</p>
+                  <p class="font-normal lg:text-2xl text-dark leading-relaxed">Hello, I’m Fatkhan! I’m dedicated to continuously expanding my knowledge and skills in <span class="font-bold">Web Development</span> and learning new technologies. I'm able to develop web applications, consume APIs and strive to deliver high-quality code.</p>
               </div>
             </div>
             <div class="w-full px-4 lg:max-w-xl flex lg:items-end lg:justify-end">
@@ -86,7 +88,38 @@
             </div>
         </div>
     </div>
+  </section> -->
+  <!-- About Start -->
+  <section id="about" class="pt-30 pb-32 lg:pt-36 dark:bg-dark relative">
+    <div class="container">
+      <div class="flex flex-wrap relative md:items-center">
+        <img src="dist/image/header-shape.png" 
+          class="absolute -z-10 w-full max-w-[200px] lg:max-w-[300px] opacity-50 "
+          style="top: 16%; left: 25%; transform: translateX(-50%);">
+        
+        <div class="w-full px-4 mb-10 lg:max-w-2xl text-center mx-auto"> <!-- Tambah text-center dan mx-auto -->
+          <div class="w-3/4 px-0 mb-10 pt-10 lg:w-full mx-auto">
+            <h4 class="font-bold text-secondary text-3xl lg:text-6xl mb-8 relative">
+              👨‍💻 About Me
+            </h4>
+            <p class="font-normal lg:text-2xl text-dark leading-relaxed">
+              Hello, I’m Fatkhan! I’m dedicated to continuously expanding my knowledge and skills in 
+              <span class="font-bold">Web Development</span> and learning new technologies. 
+              I'm able to develop web applications, consume APIs, and strive to deliver high-quality code.
+            </p>
+          </div>
+        </div>
+
+        <div class="w-full px-4 mt-6 lg:max-w-xl flex flex-col items-center lg:items-end lg:justify-end">
+          <!-- Tambah flex-col dan items-center agar gambar berada di tengah di layar kecil -->
+          <img src="dist/image/about-image.svg" class="w-100 h-100 lg:w-200 lg:h-200" alt="">
+        </div>
+
+      </div>
+    </div>
   </section>
+  <!-- About End -->
+
   <!-- About End -->
 
   <!-- Portfolio Start -->
@@ -97,7 +130,7 @@
         <div class="max-w-xl mx-auto text-center items-center mb-16 relative">
           <h2 class="font-bold text-secondary text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white relative inline-block">
             🚀 Highlight Projects
-            <img src="dist/image/header-shape.png" class="absolute -z-10 lg:w-200 lg:h-12 top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+            <img src="dist/image/header-shape.png" class="absolute -z-10 w-full max-w-[200px] lg:max-w-[300px] top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
             <img src="dist/image/burst-bloat-2.svg" alt="brush" class="absolute top-0 right-0 transform translate-x-full -translate-y-1/2 w-15 lg:w-17">
           </h2>
           <p class="font-medium text-md text-secondary md:text-lg lg:text-2xl">Here are some of the projects that I have made by combining several related lessons and developing the knowledge I have.</p>
@@ -239,9 +272,47 @@
             <div class="max-w-6xl mx-auto text-center mb-16 relative">
               <p class="font-medium text-md text-slate-300 md:text-lg max-w-7xl">I have gained valuable experience by actively contributing to the growth of an educational startup and interning at a reputable software house, where I worked as a skilled full-stack web developer.</p>
             </div>
-            <div class="space-y-4 space-x-10">
-              <div class="flex md:items-center gap-2">
-                <img src="dist/image/natusi.png" width="80" height="80" alt="">
+            <div class="max-w-6xl mx-auto mt-16 relative">
+              <div class="flex md:items-center justify-between">
+                <div class="flex">
+                  <img src="dist/image/natusi.png" class="md:block hidden" width="90" height="50" alt="">
+                  <div class="space-y-1 mt-6 mx-3">
+                    <a href="https://natusi.co.id/">
+                      <h3 class="font-semibold text-xl md:text-md text-slate-400">CV. Natusi</h3>
+                    </a>
+                    <p class="font-medium text-lg text-slate-400">Fullstack Web Developer</p>
+                  </div>
+                </div>
+                <p class="bottom-0 font-semibold text-lg text-slate-400">Jul 2023 - Jan 2025</p>
+              </div>
+              <div class="flex items-center gap-2 flex-wrap mt-4">
+                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                  <span>Laravel</span>
+                </div>
+                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                  <span>Javascript</span>
+                </div>
+                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                  <span>PHP</span>
+                </div>
+                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                  <span>PostgreeSQL</span>
+                </div>
+                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                  <span>HTML</span>
+                </div>
+                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                  <span>CSS</span>
+                </div>
+              </div>
+              <div class="space-y-3">
+                <h3 class="font-semibold text-lg text-slate-400 mt-4">The responsibilities include :</h3>
+                <ul class="list-disc space-y-2 mx-4">
+                  <li class="font-medium text-md text-slate-400">Played an active role in the development team with a focus on creating, testing, and launching web- based applications.</li>
+                  <li class="font-medium text-md text-slate-400">Directly involved in the application design and development process, with significant contributions in the development of new features and bug mitigation.</li>
+                  <li class="font-medium text-md text-slate-400">Consistently applying MVC and clean architecture design patterns to improve the structure and quality of website applications.</li>
+                  <li class="font-medium text-md text-slate-400">Holds full responsibility for ensuring the application is ready to be published on the hosting server.</li>
+                </ul>
               </div>
             </div>
         </div>
