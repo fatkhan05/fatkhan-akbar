@@ -3,11 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello, I'm Fatkhan</title>
+  <title>Hello, I'm Fatkhan 👋</title>
   <link rel="icon" type="image" href="dist/image/main-loggo.webp">
   <link href="src/output.css" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+  </style>
 </head>
 <body class="bg-[#f8f8f8]"">
   
@@ -25,25 +47,25 @@
                   <div class="mt-5 bg-white/30 backdrop-blur text-sm border-black/50 rounded-full px-1 py-0 justify-center flex-shrink-0">
                     <nav id="nav-menu" class="hidden py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-500">
                         <ul class="block lg:flex">
-                            <li class="group">
+                            <li class="group hover:bg-white/40 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
                                 <a href="#home" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
                             </li>
-                            <li class="group">
+                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
                                 <a href="#about" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">About Me</a>
                             </li>
-                            <li class="group">
+                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
                                 <a href="#portfolio" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
                             </li>
-                            <li class="group">
+                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
                                 <a href="#clients" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Skills</a>
                             </li>
-                            <li class="group">
+                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
                                 <a href="#blog" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Experience</a>
                             </li>
-                            <li class="group">
+                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
                                 <a href="#contact" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
                             </li>
-                        </ul>
+                        </ul>   
                     </nav>
                   </div>
               </div>
@@ -54,22 +76,40 @@
 
   <!-- Hero Start -->
   <img src="dist/image/ellipse.svg" class="absolute top-0 lg:w-100 lg:h-100" alt="">
-  <section id="home" class="pt-36 dark:bg-dark">
+    <section id="home" class="pt-36 dark:bg-dark">
       <div class="container relative">
-        <img src="dist/image/header-shape.png" class="bottom-0 absolute -z-10 lg:top-28 lg:left-43" width="500" style="top: 27%; left: 43%; transform: translate(-50%, -50%);">
+        <img src="dist/image/header-shape.png"
+          class="bottom-0 absolute -z-10 lg:top-28 lg:left-43"
+          width="500"
+          style="top: 27%; left: 43%; transform: translate(-50%, -50%);">
         <div class="grid justify-center items-center text-center relative">
-          <h3><span class="block text-secondary text-2xl font-bold mt-1 lg:text-7xl dark:text-white">Fatkhan Akbar.</span></h3>
-          <h1><span class="block text-primary text-4xl font-bold mt-1 lg:text-8xl dark:text-white">Web Developer</span></h1>
-          <p class="font-normal text-slate-400 mb-5 mt-5 text-xl leading-relaxed"><span class="font-bold">Web Developer With ±2 years</span> of experience in web applications. <br> Currently transitioning to Fullstack Developer.</p> 
+          <h3>
+            <span class="block text-secondary text-2xl font-bold mt-1 lg:text-7xl dark:text-white">Fatkhan Akbar.</span>
+          </h3>
+          <h1>
+            <span class="block text-primary text-4xl font-bold mt-1 lg:text-8xl dark:text-white">Web Developer</span>
+          </h1>
+          <p class="font-normal text-slate-400 mb-5 mt-5 text-xl leading-relaxed">
+            <span class="font-bold">Web Developer With ±2 years</span> of experience in web applications. <br> 
+            Currently transitioning to Fullstack Developer.
+          </p>
         </div>
-        <div class="flex justify-center tech-stack pt-10 gap-5 lg:gap-12 mb-4">
-          <a href="https://github.com/fatkhan05"><img src="dist/image/github.svg" class="mr-3 w-10 h-10 lg:w-20 lg:h-20" alt="GitHub"></a>
-            <a href=""><img src="dist/image/medium.svg" class="mt-10 mr-3 w-10 h-10 lg:w-20 lg:h-20" alt="GitHub"></a>
-            <a href=""><img src="dist/image/linkedin2.svg" class="mt-10 mr-3 w-10 h-10 lg:w-20 lg:h-20" alt="GitHub"></a>
-            <a href=""><img src="dist/image/email.svg" class="w-10 h-10 lg:w-20 lg:h-20" alt="GitHub"></a>
+        <div class="flex justify-center tech-stack pt-10 gap-5 lg:gap-20 mb-4">
+          <a href="https://github.com/fatkhan05" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
+            <img src="dist/image/github.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="GitHub">
+          </a>
+          <a href="" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
+            <img src="dist/image/medium.svg" class="mt-20 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Medium">
+          </a>
+          <a href="https://www.linkedin.com/in/fatkhanakbar/" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
+            <img src="dist/image/linkedin2.svg" class="mt-20 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="LinkedIn">
+          </a>
+          <a href="mailto:fatkhanakbar46@gmail.com" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
+            <img src="dist/image/email.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Email">
+          </a>
         </div>
       </div>
-   </section>
+    </section>
   <!-- Hero End -->
 
   <!-- About Start -->
@@ -135,77 +175,82 @@
           </h2>
           <p class="font-medium text-md text-secondary md:text-lg lg:text-2xl">Here are some of the projects that I have made by combining several related lessons and developing the knowledge I have.</p>
         </div>
+        <div class="w-full flex flex-wrap items-center lg:w-11/12 xl:mx-0 relative">
+        </div>
       </div>
-
-      <div class="w-full px-4 flex flex-wrap justify-center xl:w-11/12 xl:mx-0">
-        <div class="mb-12 p-4 md:w-1/2">
+      
+      <div class="flex justify-center">
+        <div class="w-full flex flex-wrap  lg:w-11/12 xl:mx-0">
+          <div class="mb-12 p-4 md:w-1/2">
+              <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
+                  <div class="overflow-hidden p-4" style="height: 100%;">
+                      <img src="dist/image/tiket_bioskop.png" alt="Tiket Bioskop">
+                  </div>
+                  <div class="p-4 flex items-center gap-3">
+                      <h3 class="font-semibold text-xl text-dark mt-0 mb-0 dark:text-white">Cinema Ticketing •</h3>
+                      <img src="dist/image/nestjs.png" class="w-5 h-8" alt="">
+                      <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
+                      <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
+                  </div>
+              </div>
+          </div>
+    
+          <div class="mb-12 p-4 md:w-1/2">
+              <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
+                  <div class="overflow-hidden p-4" style="height: 100%;">
+                      <img src="dist/image/payroll.png" alt="Payroll">
+                  </div>
+                  <div class="p-4 flex items-center gap-3">
+                      <h3 class="font-semibold text-xl text-dark dark:text-white">Payroll System •</h3>
+                      <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
+                      <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
+                  </div>
+              </div>
+          </div>
+    
+          <div class="mb-12 p-4 md:w-1/2">
             <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
                 <div class="overflow-hidden p-4" style="height: 100%;">
-                    <img src="dist/image/tiket_bioskop.png" alt="Tiket Bioskop">
+                    <img src="dist/image/kedai_kopi.png" alt="Payroll">
                 </div>
                 <div class="p-4 flex items-center gap-3">
-                    <h3 class="font-semibold text-xl text-dark mt-0 mb-0 dark:text-white">Cinema Ticketing •</h3>
-                    <img src="dist/image/nestjs.png" class="w-5 h-8" alt="">
-                    <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
-                    <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
+                    <h3 class="font-semibold text-xl text-dark dark:text-white">Coffee Shop Landing Page •</h3>
+                    <img src="dist/image/html5.png" class="w-7 h-7" alt="">
+                    <img src="dist/image/js.png" class="w-7 h-7" alt="">
+                    <img src="dist/image/css.png" class="w-7 h-7" alt="">
                 </div>
             </div>
-        </div>
+          </div>
+    
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
+                <div class="overflow-hidden p-4" style="height: 100%;">
+                    <img src="dist/image/bkpsdm.png" alt="Payroll">
+                </div>
+                <div class="p-4 flex items-center gap-3">
+                    <h3 class="font-semibold text-xl text-dark dark:text-white">Electronic Mail System •</h3>
+                    <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
+                      <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
+                </div>
+            </div>
+          </div>
+    
+          <!-- <div class="mb-12 p-4 md:w-1/2">
+            <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
+                <div class="overflow-hidden p-4" style="height: 100%;">
+                    <img src="dist/image/8bacus.png" alt="Payroll">
+                </div>
+                <div class="p-4 flex items-center gap-3">
+                    <h3 class="font-semibold text-xl text-dark dark:text-white">Landing Page 8Bacus •</h3>
+                    <img src="dist/image/html5.png" class="w-7 h-7" alt="">
+                    <img src="dist/image/js.png" class="w-7 h-7" alt="">
+                    <img src="dist/image/css.png" class="w-7 h-7" alt="">
+                </div>
+            </div>
+          </div> -->
   
-        <div class="mb-12 p-4 md:w-1/2">
-            <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-                <div class="overflow-hidden p-4" style="height: 100%;">
-                    <img src="dist/image/payroll.png" alt="Payroll">
-                </div>
-                <div class="p-4 flex items-center gap-3">
-                    <h3 class="font-semibold text-xl text-dark dark:text-white">Payroll System •</h3>
-                    <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
-                    <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
-                </div>
-            </div>
         </div>
-
-        <div class="mb-12 p-4 md:w-1/2">
-          <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-              <div class="overflow-hidden p-4" style="height: 100%;">
-                  <img src="dist/image/kedai_kopi.png" alt="Payroll">
-              </div>
-              <div class="p-4 flex items-center gap-3">
-                  <h3 class="font-semibold text-xl text-dark dark:text-white">Coffee Shop Landing Page •</h3>
-                  <img src="dist/image/html5.png" class="w-7 h-7" alt="">
-                  <img src="dist/image/js.png" class="w-7 h-7" alt="">
-                  <img src="dist/image/css.png" class="w-7 h-7" alt="">
-              </div>
-          </div>
-        </div>
-
-        <div class="mb-12 p-4 md:w-1/2">
-          <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-              <div class="overflow-hidden p-4" style="height: 100%;">
-                  <img src="dist/image/bkpsdm.png" alt="Payroll">
-              </div>
-              <div class="p-4 flex items-center gap-3">
-                  <h3 class="font-semibold text-xl text-dark dark:text-white">Electronic Mail System •</h3>
-                  <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
-                    <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
-              </div>
-          </div>
-        </div>
-
-        <!-- <div class="mb-12 p-4 md:w-1/2">
-          <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-              <div class="overflow-hidden p-4" style="height: 100%;">
-                  <img src="dist/image/8bacus.png" alt="Payroll">
-              </div>
-              <div class="p-4 flex items-center gap-3">
-                  <h3 class="font-semibold text-xl text-dark dark:text-white">Landing Page 8Bacus •</h3>
-                  <img src="dist/image/html5.png" class="w-7 h-7" alt="">
-                  <img src="dist/image/js.png" class="w-7 h-7" alt="">
-                  <img src="dist/image/css.png" class="w-7 h-7" alt="">
-              </div>
-          </div>
-        </div> -->
-    </div>
+      </div>
 
   </section>  
   <!-- Portfolio End -->
@@ -254,7 +299,7 @@
   <!-- Skills End -->
 
   <!-- Experience Start -->
-  <section id="clients" class="pt-36 pb-32 bg-dark">
+  <section id="clients" class="pt-36 pb-28 bg-dark">
     <div class="container">
         <div class="w-full mx-0">
           <!-- <div class="max-w-2xl mx-auto text-center items-center mb-16 relative">
@@ -320,5 +365,124 @@
     </div>
   </section>
   <!-- Experience End -->
+
+  <!-- Resume Start -->
+    <!-- <section id="resume" class="pt-36 pb-32">
+      <div class="container">
+        <div class="w-full mx-0">
+          <div class="flex justify-center">
+            <h1>Resume</h1>
+          </div>
+        </div>
+      </div>
+    </section> -->
+  <!-- Resume End -->
+
+  <!-- Message Start -->
+   <section id="message" class="pt-36 pb-8 bg-dark">
+    <div class="container">
+      <div class="w-full mx-auto lg:px-14">
+        <div class="flex flex-wrap justify-center">
+          <h2 class="font-bold text-white lg:text-5xl">Contact Me 💬</h2>
+        </div>
+        <form action="">
+          <div class=" justify-center mt-2">
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
+              <div class="lg:col-span-1">
+                <label for="first-name" class="block text-sm/6 font-medium text-slate-400">Full name</label>
+                <div class="mt-2">
+                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
+                </div>
+              </div>
+              <div class="lg:col-span-1">
+                <label for="last-name" class="block text-sm/6 font-medium text-slate-400">Email</label>
+                <div class="mt-2">
+                  <input type="email" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
+                </div>
+              </div>
+              <div class="lg:col-span-2">
+                <label for="email" class="block text-sm/6 font-medium text-slate-400">Message</label>
+                <div class="mt-2">
+                  <textarea name="" id="" rows="6" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="mt-8 flex rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-300 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-slate-400">Send Message <img src="dist/image/ic_telegram.svg" class="px-2" alt=""> </button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Message End -->
+  
+  <!-- Footer Start -->
+  <section id="footer" class="pt-10 pb-10 bg-dark">
+    <div class="containter">
+      <div class="w-full mx-auto lg:px-28">
+        <hr class="border-slate-400 border-t-2">
+        <div class="flex justify-between items-end">
+          <p class="font-normal relative bottom-0 text-lg text-slate-300">Fatkhan Akbar &copy; 2025 made with <span class="font-semibold text-md text-slate-300"><a href="https://tailwindcss.com">Tailwind CSS V3</a></span></p>
+          <div class="flex items-center lg:gap-4 gap-4">
+            <a href="https://github.com/fatkhan05">
+              <li>
+                <img src="dist/image/ic_github.svg" alt="">
+              </li>
+            </a>
+            <a href="https://medium.com">
+              <li>
+                <img src="dist/image/ic_medium.svg" alt="">
+              </li>
+            </a>
+            <a href="https://www.linkedin.com/in/fatkhanakbar/">
+              <li>
+                <img src="dist/image/ic_linkedin.svg" alt="">
+              </li>
+            </a>
+            <a href="">
+              <li>
+                <img src="dist/image/ic_x.svg" alt="">
+              </li>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   </section>
+  <!-- Footer End -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const icons = document.querySelectorAll(".social-icon");
+      icons.forEach((icon, index) => {
+        setTimeout(() => {
+          icon.style.opacity = "1";
+        }, index * 300); // Delay tiap ikon 400ms
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const cards = document.querySelectorAll(".card img"); // Ambil semua ikon di dalam card
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add("visible");
+              }, index * 300); // Delay bertahap setiap ikon (300ms)
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      cards.forEach((img) => {
+        img.classList.add("fade-in"); // Mulai dalam keadaan tersembunyi
+        observer.observe(img);
+      });
+    });
+  </script>
 </body>
 </html>
