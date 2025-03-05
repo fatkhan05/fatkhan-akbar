@@ -385,30 +385,36 @@
         <div class="flex flex-wrap justify-center">
           <h2 class="font-bold text-white lg:text-5xl">Contact Me 💬</h2>
         </div>
-        <form action="">
+        <form name="submit-to-google-sheet">
           <div class=" justify-center mt-2">
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
               <div class="lg:col-span-1">
                 <label for="first-name" class="block text-sm/6 font-medium text-slate-400">Full name</label>
                 <div class="mt-2">
-                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
+                  <input type="text" name="fullname" id="fullname" value="" autocomplete="given-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
                 </div>
               </div>
               <div class="lg:col-span-1">
                 <label for="last-name" class="block text-sm/6 font-medium text-slate-400">Email</label>
                 <div class="mt-2">
-                  <input type="email" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
+                  <input type="email" name="email" id="email" autocomplete="family-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
                 </div>
               </div>
               <div class="lg:col-span-2">
                 <label for="email" class="block text-sm/6 font-medium text-slate-400">Message</label>
                 <div class="mt-2">
-                  <textarea name="" id="" rows="6" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6"></textarea>
+                  <textarea name="message" id="message" rows="6" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6"></textarea>
                 </div>
               </div>
             </div>
           </div>
-          <button type="button" class="mt-8 flex rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-300 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-slate-400">Send Message <img src="dist/image/ic_telegram.svg" class="px-2" alt=""> </button>
+          <!-- <button type="submit" class="mt-8 flex rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-300 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-slate-400"> <svg class="animate-spin h-5 w-5 mr-3 text-white fill-current" viewBox="0 0 24 24">
+          </svg> Send Message <img src="dist/image/ic_telegram.svg" class="px-2" alt=""> </button> -->
+          <button type="button" onclick="sendToSpreadshet()" class="mt-8 flex rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-300 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-slate-400">
+            Send Message 
+            <img src="dist/image/ic_telegram.svg" class="px-2" alt=""> 
+          </button>
+          
         </form>
       </div>
     </div>
@@ -451,6 +457,7 @@
    </section>
   <!-- Footer End -->
 
+  <script src="./node_modules/preline/dist/preline.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const icons = document.querySelectorAll(".social-icon");
@@ -483,6 +490,72 @@
         observer.observe(img);
       });
     });
+
+    // FORM KIRIM PESAN KE SPREADSHEET
+    function sendToSpreadshet() { 
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzbcWDpV188LGL1-5RXkT4TbOBjDRWuENYq5ftJawhaT3wsgzIBjfKHv2GPMp-xXfCUxw/exec'
+      const form = document.forms['submit-to-google-sheet']
+
+      // Ambil elemen input
+      var fullnameInput = document.getElementById('fullname').val();
+      var emailInput = document.getElementById('email').value();
+      var messageInput = document.getElementById('message').value();
+
+      console.log(fullnameInput);
+      
+      
+    }
+
+    // form.addEventListener('submit', e => {
+    //   e.preventDefault();
+
+    //   // Ambil elemen input
+    //   var fullnameInput = document.getElementById('fullname').value();
+    //   var emailInput = document.getElementById('email');
+    //   var messageInput = document.getElementById('message');
+
+    //   // Pastikan elemen ditemukan sebelum mengambil nilai
+    //   if (!fullnameInput || !emailInput || !messageInput) {
+    //     console.error('Elemen input tidak ditemukan.');
+    //     return;
+    //   }
+    //   console.log(fullnameInput);
+    //   return;
+    //   const fullname = fullnameInput.value();
+    //   const email = emailInput.value();
+    //   const message = messageInput.value();
+
+    //   // Validasi input tidak boleh kosong
+    //   if (fullname === "" || email === "" || message === "") {
+    //     alert("Semua kolom harus diisi!");
+    //     return;
+    //   }
+
+    //   // Kirim data jika validasi lolos
+    //   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    //     .then(response => {
+    //       console.log('Success!', response);
+    //       alert("Pesan berhasil dikirim!");
+    //       form.reset(); // Reset form setelah sukses
+    //     })
+    //     .catch(error => console.error('Error!', error.message));
+    // });
+  </script>
+  <script type="text/javascript">
+    // FORM KIRIM PESAN KE SPREADSHEET
+    function sendToSpreadshet() { 
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzbcWDpV188LGL1-5RXkT4TbOBjDRWuENYq5ftJawhaT3wsgzIBjfKHv2GPMp-xXfCUxw/exec'
+      const form = document.forms['submit-to-google-sheet']
+
+      // Ambil elemen input
+      var fullnameInput = document.getElementById("fullname");
+      var emailInput = document.getElementById('email');
+      var messageInput = document.getElementById('message');
+
+      console.log(fullnameInput);
+      
+      
+    }
   </script>
 </body>
 </html>
