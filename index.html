@@ -35,14 +35,9 @@
   
   <!-- Header Start -->
     <header class="bg-transparent fixed top-0 left-0 w-full flex items-center z-10">
-      <div class="container">
-          <div class="flex items-center justify-center">
-              <div class="flex items-center px-4">
-                  <button id="hamburger" name="hamburger" type="buttton" class="block absolute right-4 lg:hidden ">
-                      <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                      <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                      <span class="hamburger-line transition duration-300 ease-in-out  origin-top-left"></span>
-                  </button>
+      <div class="container mx-auto p-4">
+          <div class="flex justify-center items-center">
+              <!-- <div class="flex px-4"> -->
 
                   <div class="mt-5 bg-white/30 backdrop-blur text-sm border-black/50 rounded-full px-1 py-0 justify-center flex-shrink-0">
                     <nav id="nav-menu" class="hidden py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-500">
@@ -68,7 +63,26 @@
                         </ul>   
                     </nav>
                   </div>
-              </div>
+
+                  <!-- Hamburger Menu -->
+                  <div id="hamburger" class="ml-auto h-55 w-55 p-1 rounded-md border border-slate-300 lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="rgb(226 232 240)">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                  </div>
+
+                  <!-- Mobile Menu -->
+                  <div id="mobile-menu" class="hidden absolute right-0 mr-4 top-16 w-1/2 rounded-xl bg-white/60 text-end py-4 px-8 shadow-xl lg:hidden">
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="block py-2 hover:text-gray-400">Home</a></li>
+                        <li><a href="#about" class="block py-2 hover:text-gray-400">About Me</a></li>
+                        <li><a href="#portfolio" class="block py-2 hover:text-gray-400">Portfolio</a></li>
+                        <li><a href="#skills" class="block py-2 hover:text-gray-400">Skills</a></li>
+                        <li><a href="#experience" class="block py-2 hover:text-gray-400">Experience</a></li>
+                        <li><a href="#contact" class="block py-2 hover:text-gray-400">Contact</a></li>
+                    </ul>
+                </div>
+              <!-- </div> -->
           </div>
       </div>
     </header>
@@ -518,6 +532,13 @@
       
       
     }
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
 
     // form.addEventListener('submit', e => {
     //   e.preventDefault();
