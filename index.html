@@ -167,7 +167,7 @@
           </div>
         </div>
 
-        <div class="w-full px-4 mt-6 lg:max-w-xl flex flex-col items-center lg:items-end lg:justify-end">
+        <div class="w-full px-4 mt-6 lg:max-w-xl flex flex-col items-center md:justify-center lg:items-end lg:justify-end">
           <!-- Tambah flex-col dan items-center agar gambar berada di tengah di layar kecil -->
           <img src="dist/image/about-image.svg" class="w-100 h-100 lg:w-200 lg:h-200" alt="">
         </div>
@@ -487,6 +487,14 @@
    </section>
   <!-- Footer End -->
 
+  <!-- Arrow to Top Start -->
+   <a href="#home" id="to-top" class="arrow fixed bottom-0 right-0 cursor-pointer mr-5 mb-4 rounded-lg bg-white/60 border border-slate-200 opacity-0 transition-opacity duration-300">
+      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17 15L12 10L7 15" stroke="rgb(71 85 105)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+   </a>
+  <!-- Arrow to Top End -->
+
   <script src="./node_modules/preline/dist/preline.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -539,9 +547,35 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation(); 
+      mobileMenu.classList.toggle('hidden');
     });
+
+    // Klik di luar hamburger
+    window.addEventListener('click', function (e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Scroll To Top
+    document.addEventListener("DOMContentLoaded", function () {
+      const toTopButton = document.getElementById("to-top");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) {
+          // toTopButton.classList.remove("hidden");
+          toTopButton.classList.remove("opacity-0");
+          toTopButton.classList.add("opacity-100");
+        } else {
+          // toTopButton.classList.add("hidden");
+          toTopButton.classList.remove("opacity-100");
+          toTopButton.classList.add("opacity-0");
+        }
+      });
+    });
+    
 
     // form.addEventListener('submit', e => {
     //   e.preventDefault();
