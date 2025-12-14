@@ -32,6 +32,15 @@
     .fade-in.visible {
       animation: fadeIn 0.6s ease-out forwards;
     }
+
+    .cursor {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
   </style>
 </head>
 <body class="bg-[#f8f8f8]"">
@@ -107,8 +116,7 @@
             <span class="block text-primary text-4xl font-bold mt-1 lg:text-8xl dark:text-white">Web Developer</span>
           </h1>
           <p class="font-normal text-slate-400 mb-5 mt-5 text-xl leading-relaxed">
-            <span class="font-bold">Web Developer With ±2 years</span> of experience in web applications. <br> 
-            Currently transitioning to Fullstack Developer.
+            <span id="typing-text"></span><span class="cursor">|</span>
           </p>
         </div>
         <div class="flex justify-center tech-stack pt-10 gap-5 lg:gap-20 mb-4">
@@ -620,6 +628,82 @@
       });
     });
     
+
+    // Typing animation for hero text
+    const textParts = [
+      { text: "Web Developer With ±2 years", bold: true },
+      { text: " of experience in web applications." },
+      "<br>",
+      { text: "Currently transitioning to Fullstack Developer." }
+    ];
+
+    const typingElement = document.getElementById('typing-text');
+    const cursorElement = document.querySelector('.cursor');
+    let currentPartIndex = 0;
+    let currentCharIndex = 0;
+
+    function deleteText() {
+      if (typingElement.innerHTML === '') {
+        // Start typing again
+        currentPartIndex = 0;
+        currentCharIndex = 0;
+        typeText();
+        return;
+      }
+      // Remove last character
+      const lastChild = typingElement.lastChild;
+      if (lastChild) {
+        if (lastChild.nodeType === Node.TEXT_NODE) {
+          if (lastChild.textContent.length > 1) {
+            lastChild.textContent = lastChild.textContent.slice(0, -1);
+          } else {
+            typingElement.removeChild(lastChild);
+          }
+        } else if (lastChild.tagName === 'BR') {
+          typingElement.removeChild(lastChild);
+        } else {
+          // Span
+          const text = lastChild.textContent;
+          if (text.length > 1) {
+            lastChild.textContent = text.slice(0, -1);
+          } else {
+            typingElement.removeChild(lastChild);
+          }
+        }
+      }
+      setTimeout(deleteText, 50);
+    }
+
+    function typeText() {
+      if (currentPartIndex >= textParts.length) {
+        setTimeout(deleteText, 2000);
+        return;
+      }
+
+      const part = textParts[currentPartIndex];
+      if (typeof part === 'string') {
+        typingElement.innerHTML += part;
+        currentPartIndex++;
+        setTimeout(typeText, 500);
+      } else {
+        if (currentCharIndex < part.text.length) {
+          const char = part.text[currentCharIndex];
+          const span = document.createElement('span');
+          if (part.bold) span.className = 'font-bold';
+          span.textContent = char;
+          typingElement.appendChild(span);
+          currentCharIndex++;
+          setTimeout(typeText, 100);
+        } else {
+          currentPartIndex++;
+          currentCharIndex = 0;
+          setTimeout(typeText, 200);
+        }
+      }
+    }
+
+    // Start typing after page load
+    setTimeout(typeText, 3000);
 
     // form.addEventListener('submit', e => {
     //   e.preventDefault();
