@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,20 @@
   <link rel="icon" type="image" href="dist/image/main-loggo.webp">
   <link href="src/output.css" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
+
     }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -38,103 +43,137 @@
     }
 
     @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
+
+      0%,
+      50% {
+        opacity: 1;
+      }
+
+      51%,
+      100% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
-<body class="bg-[#f8f8f8]"">
-  
+
+<body class="bg-[#f8f8f8]">
+
   <!-- Header Start -->
-    <header class="bg-transparent fixed top-0 left-0 w-full flex items-center z-10">
-      <div class="container mx-auto p-4">
-          <div class="flex justify-center items-center">
-              <!-- <div class="flex px-4"> -->
+  <header class=" bg-transparent fixed top-0 left-0 w-full flex items-center z-10">
+    <div class="container mx-auto p-4">
+      <div class="flex justify-center items-center">
+        <!-- <div class="flex px-4"> -->
 
-                  <div class="mt-5 bg-white/30 backdrop-blur text-sm border-black/50 rounded-full px-1 py-0 justify-center flex-shrink-0">
-                    <nav id="nav-menu" class="hidden py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark lg:dark:bg-transparent dark:shadow-slate-500">
-                        <ul class="block lg:flex">
-                            <li class="group hover:bg-white/40 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
-                                <a href="#home" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
-                            </li>
-                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
-                                <a href="#about" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">About Me</a>
-                            </li>
-                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
-                                <a href="#portfolio" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
-                            </li>
-                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
-                                <a href="#clients" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Skills</a>
-                            </li>
-                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
-                                <a href="#experience" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Experience</a>
-                            </li>
-                            <li class="group hover:bg-white/50 text-slate-500 text-sm border rounded-3xl border-none px-3 py-1 justify-center flex-shrink-0 transition-all duration-300">
-                                <a href="#message" class="font-bold text-secondary py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
-                            </li>
-                        </ul>   
-                    </nav>
-                  </div>
+        <div
+          class="mt-5 bg-white/60 dark:bg-slate-950/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/50 text-sm rounded-full p-1 justify-center flex-shrink-0 shadow-sm transition-colors duration-300">
+          <nav id="nav-menu"
+            class="hidden lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+            <ul class="relative flex items-center">
+              <!-- Sliding Pill Cursor -->
+              <li id="nav-cursor"
+                class="absolute z-0 rounded-full bg-secondary/10 dark:bg-white/10 opacity-0 pointer-events-none transition-all duration-300 ease-out">
+              </li>
 
-                  <!-- Hamburger Menu -->
-                  <div id="hamburger" class="ml-auto h-55 w-55 p-1 rounded-md border border-slate-300 lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="rgb(226 232 240)">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                  </div>
+              <li
+                class="tab-item relative z-10 block cursor-pointer text-xs uppercase font-bold justify-center flex-shrink-0 transition-all duration-300">
+                <a href="#home"
+                  class="block w-full h-full px-4 py-2 md:px-6 md:py-3 text-secondary dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300">Home</a>
+              </li>
+              <li
+                class="tab-item relative z-10 block cursor-pointer text-xs uppercase font-bold justify-center flex-shrink-0 transition-all duration-300">
+                <a href="#about"
+                  class="block w-full h-full px-4 py-2 md:px-6 md:py-3 text-secondary dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300">About
+                  Me</a>
+              </li>
+              <li
+                class="tab-item relative z-10 block cursor-pointer text-xs uppercase font-bold justify-center flex-shrink-0 transition-all duration-300">
+                <a href="#portfolio"
+                  class="block w-full h-full px-4 py-2 md:px-6 md:py-3 text-secondary dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300">Portfolio</a>
+              </li>
+              <li
+                class="tab-item relative z-10 block cursor-pointer text-xs uppercase font-bold justify-center flex-shrink-0 transition-all duration-300">
+                <a href="#clients"
+                  class="block w-full h-full px-4 py-2 md:px-6 md:py-3 text-secondary dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300">Skills</a>
+              </li>
+              <li
+                class="tab-item relative z-10 block cursor-pointer text-xs uppercase font-bold justify-center flex-shrink-0 transition-all duration-300">
+                <a href="#experience"
+                  class="block w-full h-full px-4 py-2 md:px-6 md:py-3 text-secondary dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300">Experience</a>
+              </li>
+              <li
+                class="tab-item relative z-10 block cursor-pointer text-xs uppercase font-bold justify-center flex-shrink-0 transition-all duration-300">
+                <a href="#message"
+                  class="block w-full h-full px-4 py-2 md:px-6 md:py-3 text-secondary dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-                  <!-- Mobile Menu -->
-                  <div id="mobile-menu" class="hidden absolute right-0 mr-4 top-16 w-1/2 rounded-xl bg-white/60 text-end py-4 px-8 shadow-xl lg:hidden">
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="block py-2 hover:text-gray-400">Home</a></li>
-                        <li><a href="#about" class="block py-2 hover:text-gray-400">About Me</a></li>
-                        <li><a href="#portfolio" class="block py-2 hover:text-gray-400">Portfolio</a></li>
-                        <li><a href="#clients" class="block py-2 hover:text-gray-400">Skills</a></li>
-                        <li><a href="#experience" class="block py-2 hover:text-gray-400">Experience</a></li>
-                        <li><a href="#message" class="block py-2 hover:text-gray-400">Contact</a></li>
-                    </ul>
-                </div>
-              <!-- </div> -->
-          </div>
+        <!-- Hamburger Menu -->
+        <div id="hamburger" class="ml-auto h-55 w-55 p-1 rounded-md border border-slate-300 lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+            stroke="rgb(226 232 240)">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+          class="hidden absolute right-0 mr-4 top-16 w-1/2 rounded-xl bg-white/60 text-end py-4 px-8 shadow-xl lg:hidden">
+          <ul class="space-y-2">
+            <li><a href="#home" class="block py-2 hover:text-gray-400">Home</a></li>
+            <li><a href="#about" class="block py-2 hover:text-gray-400">About Me</a></li>
+            <li><a href="#portfolio" class="block py-2 hover:text-gray-400">Portfolio</a></li>
+            <li><a href="#clients" class="block py-2 hover:text-gray-400">Skills</a></li>
+            <li><a href="#experience" class="block py-2 hover:text-gray-400">Experience</a></li>
+            <li><a href="#message" class="block py-2 hover:text-gray-400">Contact</a></li>
+          </ul>
+        </div>
+        <!-- </div> -->
       </div>
-    </header>
+    </div>
+  </header>
   <!-- Header End -->
 
   <!-- Hero Start -->
-  <img src="dist/image/ellipse.svg" class="absolute top-0 lg:w-100 lg:h-100" alt="">
-    <section id="home" class="pt-36 dark:bg-dark">
-      <div class="container relative">
-        <img src="dist/image/header-shape.png"
-          class="bottom-0 absolute -z-10 lg:top-28 lg:left-43"
-          width="500"
-          style="top: 27%; left: 43%; transform: translate(-50%, -50%);">
-        <div class="grid justify-center items-center text-center relative">
-          <h3>
-            <span class="block text-secondary text-2xl font-bold mt-1 lg:text-7xl dark:text-white">Fatkhan Akbar.</span>
-          </h3>
-          <h1>
-            <span class="block text-primary text-4xl font-bold mt-1 lg:text-8xl dark:text-white">Web Developer</span>
-          </h1>
-          <p class="font-normal text-slate-400 mb-5 mt-5 text-xl leading-relaxed">
-            <span id="typing-text"></span><span class="cursor">|</span>
-          </p>
-        </div>
-        <div class="flex justify-center tech-stack pt-10 gap-5 lg:gap-20 mb-4">
-          <a href="https://github.com/fatkhan05" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
-            <img src="dist/image/github.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="GitHub">
-          </a>
-          <a href="" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
-            <img src="dist/image/medium.svg" class="lg:mt-20 mt-10 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Medium">
-          </a>
-          <a href="https://www.linkedin.com/in/fatkhanakbar/" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
-            <img src="dist/image/linkedin2.svg" class="lg:mt-20 mt-10 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="LinkedIn">
-          </a>
-          <a href="mailto:fatkhanakbar46@gmail.com" class="social-icon opacity-0" style="transition: opacity 0.6s ease-in-out;">
-            <img src="dist/image/email.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Email">
-          </a>
-        </div>
+  <img src="dist/image/ellipse.svg" class="absolute top-0 left-1/2 -translate-x-1/2 lg:w-100 lg:h-100" alt="">
+  <section id="home" class="pt-36 dark:bg-dark">
+    <div class="container relative">
+      <div class="grid justify-center items-center text-center relative z-10">
+        <h3>
+          <span class="block text-secondary text-2xl font-bold mt-1 lg:text-7xl dark:text-white">Fatkhan Akbar.</span>
+        </h3>
+        <h1 class="relative inline-block mx-auto">
+          <img src="dist/image/header-shape.png" class="absolute -z-10 w-[200px] md:w-[300px] lg:w-[500px]"
+            style="top: 50%; left: 30%; transform: translate(-50%, -50%);">
+          <span class="block text-primary text-4xl font-bold mt-1 lg:text-8xl dark:text-white relative z-10">Software
+            Engineer</span>
+        </h1>
+        <p class="font-normal text-slate-400 mb-5 mt-5 text-xl leading-relaxed">
+          <span id="typing-text"></span><span class="cursor">|</span>
+        </p>
       </div>
-    </section>
+      <div class="flex justify-center tech-stack pt-10 gap-5 lg:gap-20 mb-4">
+        <a href="https://github.com/fatkhan05" class="social-icon opacity-0"
+          style="transition: opacity 0.6s ease-in-out;">
+          <img src="dist/image/github.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="GitHub">
+        </a>
+        <a href="https://medium.com/@fatkhanakbar" class="social-icon opacity-0"
+          style="transition: opacity 0.6s ease-in-out;">
+          <img src="dist/image/medium.svg" class="lg:mt-20 mt-10 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Medium">
+        </a>
+        <a href="https://www.linkedin.com/in/fatkhanakbar/" class="social-icon opacity-0"
+          style="transition: opacity 0.6s ease-in-out;">
+          <img src="dist/image/linkedin2.svg" class="lg:mt-20 mt-10 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="LinkedIn">
+        </a>
+        <a href="mailto:fatkhanakbar46@gmail.com" class="social-icon opacity-0"
+          style="transition: opacity 0.6s ease-in-out;">
+          <img src="dist/image/email.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Email">
+        </a>
+      </div>
+    </div>
+  </section>
   <!-- Hero End -->
 
   <!-- About Start -->
@@ -157,25 +196,24 @@
   <!-- About Start -->
   <section id="about" class="pt-30 pb-32 lg:pt-36 dark:bg-dark relative">
     <div class="container">
-      <div class="flex flex-wrap relative md:items-center">
-        <img src="dist/image/header-shape.png" 
-          class="absolute -z-10 w-full max-w-[200px] lg:max-w-[300px] opacity-50 "
-          style="top: 16%; left: 25%; transform: translateX(-50%);">
-        
+      <div class="flex flex-wrap relative md:items-center z-10">
         <div class="w-full px-4 mb-10 lg:max-w-2xl text-center mx-auto"> <!-- Tambah text-center dan mx-auto -->
           <div class="w-3/4 px-0 mb-10 pt-10 lg:w-full mx-auto">
-            <h4 class="font-bold text-secondary text-3xl lg:text-6xl mb-8 relative">
-              👨‍💻 About Me
+            <h4 class="font-bold text-secondary text-3xl lg:text-6xl mb-8 relative inline-block">
+              <img src="dist/image/header-shape.png" class="absolute -z-10 w-[200px] lg:w-[370px] opacity-50"
+                style="top: 50%; left: 45%; transform: translate(-50%, -50%);">
+              <span class="relative z-10">👨‍💻 About Me</span>
             </h4>
             <p class="font-normal lg:text-2xl text-dark leading-relaxed">
-              Hello, I’m Fatkhan! I’m dedicated to continuously expanding my knowledge and skills in 
-              <span class="font-bold">Web Development</span> and learning new technologies. 
+              Hello, I’m Fatkhan! I’m dedicated to continuously expanding my knowledge and skills in
+              <span class="font-bold">Software Engineer</span> and learning new technologies.
               I'm able to develop web applications, consume APIs, and strive to deliver high-quality code.
             </p>
           </div>
         </div>
 
-        <div class="w-full px-4 mt-6 lg:max-w-xl flex flex-col items-center md:justify-center lg:items-end lg:justify-end">
+        <div
+          class="w-full px-4 mt-6 lg:max-w-xl flex flex-col items-center md:justify-center lg:items-end lg:justify-end">
           <!-- Tambah flex-col dan items-center agar gambar berada di tengah di layar kecil -->
           <img src="dist/image/about-image.svg" class="w-100 h-100 lg:w-200 lg:h-200" alt="">
         </div>
@@ -193,74 +231,80 @@
       <img src="dist/image/bg-projects.svg" class="absolute left-0 w-full -z-10" alt="">
       <div class="w-full px-4">
         <div class="max-w-xl mx-auto text-center items-center mb-16 relative">
-          <h2 class="font-bold text-secondary text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white relative inline-block">
+          <h2
+            class="font-bold text-secondary text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white relative inline-block">
             🚀 Highlight Projects
-            <img src="dist/image/header-shape.png" class="absolute -z-10 w-full max-w-[200px] lg:max-w-[300px] top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-            <img src="dist/image/burst-bloat-2.svg" alt="brush" class="absolute top-0 right-0 transform translate-x-full -translate-y-1/2 w-15 lg:w-17">
+            <img src="dist/image/header-shape.png"
+              class="absolute -z-10 w-full max-w-[200px] lg:max-w-[300px] top-1/2 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+            <img src="dist/image/burst-bloat-2.svg" alt="brush"
+              class="absolute top-0 right-0 transform translate-x-full -translate-y-1/2 w-15 lg:w-17">
           </h2>
-          <p class="font-medium text-md text-secondary md:text-lg lg:text-2xl">Here are some of the projects that I have made by combining several related lessons and developing the knowledge I have.</p>
+          <p class="font-medium text-md text-secondary md:text-lg lg:text-2xl">Here are some of the projects that I have
+            made by combining several related lessons and developing the knowledge I have.</p>
         </div>
         <div class="w-full flex flex-wrap items-center lg:w-11/12 xl:mx-0 relative">
         </div>
       </div>
-      
+
       <div class="flex justify-center">
         <div class="w-full flex flex-wrap  lg:w-11/12 xl:mx-0">
           <div class="mb-12 p-4 md:w-1/2">
-              <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-                  <div class="overflow-hidden p-4" style="height: 100%;">
-                      <img src="dist/image/tiket_bioskop.png" alt="Tiket Bioskop">
-                  </div>
-                  <div class="p-4 flex items-center gap-3">
-                      <h3 class="font-semibold text-xl text-dark mt-0 mb-0 dark:text-white">Cinema Ticketing •</h3>
-                      <img src="dist/image/nestjs.png" class="w-5 h-8" alt="">
-                      <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
-                      <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
-                  </div>
-              </div>
-          </div>
-    
-          <div class="mb-12 p-4 md:w-1/2">
-              <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-                  <div class="overflow-hidden p-4" style="height: 100%;">
-                      <img src="dist/image/textilindocp.png" alt="Payroll">
-                  </div>
-                  <div class="p-4 flex items-center gap-3">
-                      <h3 class="font-semibold text-xl text-dark dark:text-white"><a href="https://dev-next.wijayacorp.com/" target="_blank">Company Profile and E-Commerce</a> •</h3>
-                      <img src="dist/image/next.png" class="w-8 h-8" alt="">
-                      <img src="dist/image/supabase.png" class="w-9 h-8" alt="">
-                      <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
-                  </div>
-              </div>
-          </div>
-    
-          <div class="mb-12 p-4 md:w-1/2">
             <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-                <div class="overflow-hidden p-4" style="height: 100%;">
-                    <img src="dist/image/kedai_kopi.png" alt="Payroll">
-                </div>
-                <div class="p-4 flex items-center gap-3">
-                    <h3 class="font-semibold text-xl text-dark dark:text-white">Coffee Shop Landing Page •</h3>
-                    <img src="dist/image/html5.png" class="w-7 h-7" alt="">
-                    <img src="dist/image/js.png" class="w-7 h-7" alt="">
-                    <img src="dist/image/css.png" class="w-7 h-7" alt="">
-                </div>
+              <div class="overflow-hidden p-4" style="height: 100%;">
+                <img src="dist/image/tiket_bioskop.png" alt="Tiket Bioskop">
+              </div>
+              <div class="p-4 flex items-center gap-3">
+                <h3 class="font-semibold text-xl text-dark mt-0 mb-0 dark:text-white">Cinema Ticketing •</h3>
+                <img src="dist/image/nestjs.png" class="w-5 h-8" alt="">
+                <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
+                <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
+              </div>
             </div>
           </div>
-    
+
           <div class="mb-12 p-4 md:w-1/2">
             <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
-                <div class="overflow-hidden p-4" style="height: 100%;">
-                    <img src="dist/image/digitalkreatifpro.png" alt="Payroll">
-                </div>
-                <div class="p-4 flex items-center gap-3">
-                    <h3 class="font-semibold text-xl text-dark dark:text-white"><a href="https://digitalkreatif.pro/" target="_blank">Web Profile Digital Kreatif Pro</a> •</h3>
-                    <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
-                      <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
-                </div>
+              <div class="overflow-hidden p-4" style="height: 100%;">
+                <img src="dist/image/textilindo.jpeg" alt="Payroll">
+              </div>
+              <div class="p-4 flex items-center gap-3">
+                <h3 class="font-semibold text-xl text-dark dark:text-white"><a href="https://textilindo.com/"
+                    target="_blank">Company Profile and E-Commerce</a> •</h3>
+                <img src="dist/image/next.png" class="w-8 h-8" alt="">
+                <img src="dist/image/supabase.png" class="w-9 h-8" alt="">
+                <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
+              </div>
             </div>
           </div>
-    
+
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
+              <div class="overflow-hidden p-4" style="height: 100%;">
+                <img src="dist/image/kedai_kopi.png" alt="Payroll">
+              </div>
+              <div class="p-4 flex items-center gap-3">
+                <h3 class="font-semibold text-xl text-dark dark:text-white">Coffee Shop Landing Page •</h3>
+                <img src="dist/image/html5.png" class="w-7 h-7" alt="">
+                <img src="dist/image/js.png" class="w-7 h-7" alt="">
+                <img src="dist/image/css.png" class="w-7 h-7" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
+              <div class="overflow-hidden p-4" style="height: 100%;">
+                <img src="dist/image/digitalkreatifpro.png" alt="Payroll">
+              </div>
+              <div class="p-4 flex items-center gap-3">
+                <h3 class="font-semibold text-xl text-dark dark:text-white"><a href="https://digitalkreatif.pro/"
+                    target="_blank">Web Profile Digital Kreatif Pro</a> •</h3>
+                <img src="dist/image/laravel.png" class="w-7 h-7" alt="">
+                <img src="dist/image/tailwind.svg" class="w-7 h-7" alt="">
+              </div>
+            </div>
+          </div>
+
           <!-- <div class="mb-12 p-4 md:w-1/2">
             <div class="card bg-white shadow-sm hover:shadow-lg rounded-lg overflow-hidden">
                 <div class="overflow-hidden p-4" style="height: 100%;">
@@ -274,59 +318,69 @@
                 </div>
             </div>
           </div> -->
-  
+
         </div>
       </div>
 
-  </section>  
+  </section>
   <!-- Portfolio End -->
-   
+
 
   <!-- Skills Start -->
   <section id="clients" class="pt-36 pb-32 bg-dark">
     <div class="container">
-        <div class="w-full mx-0">
-            <div class=" mx-auto text-center mb-16">
-              <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-7xl">🎯 Specialized Skills</h2>
-              <p class="font-medium text-md text-slate-300 md:text-lg">I am someone who enjoys seeking challenges. Here are a few skills that I have developed and honed.</p>
-            </div>
+      <div class="w-full mx-0">
+        <div class=" mx-auto text-center mb-16">
+          <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-7xl">🎯 Specialized Skills</h2>
+          <p class="font-medium text-md text-slate-300 md:text-lg">I am someone who enjoys seeking challenges. Here are
+            a few skills that I have developed and honed.</p>
         </div>
-        <div class="p-4 flex flex-wrap gap-28 justify-center lg:flex-wrap lg:px-10">
-          <!-- <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+      </div>
+      <div class="p-4 flex flex-wrap gap-28 justify-center lg:flex-wrap lg:px-10">
+        <!-- <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
             <img src="dist/image/nextjs.svg" alt="">
           </div> -->
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/nextjs.svg" alt="">
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/nextjs.svg" alt="">
         </div>
-        
-          <!-- <div class="card flex justify-center items-center bg-donker md:h-50 md:w-50 lg:w-55 lg:h-40 m-5">
+
+        <!-- <div class="card flex justify-center items-center bg-donker md:h-50 md:w-50 lg:w-55 lg:h-40 m-5">
             <img src="dist/image/nextjs.svg" class="w-30 h-30" alt="">
           </div> -->
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/react.svg" alt="">
-          </div>
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/typescript.svg" alt="">
-          </div>
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/javascript.svg" alt="">
-          </div>
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/tailwind.svg" alt="">
-          </div>
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/postgresql.svg" alt="">
-          </div>
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/firebase.svg" alt="">
-          </div>
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/nodejs.svg" alt="">
-          </div>
-          <div class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
-            <img src="dist/image/laravel.png" alt="">
-          </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/react.svg" alt="">
         </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/typescript.svg" alt="">
+        </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/javascript.svg" alt="">
+        </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/tailwind.svg" alt="">
+        </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/postgresql.svg" alt="">
+        </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/firebase.svg" alt="">
+        </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/nodejs.svg" alt="">
+        </div>
+        <div
+          class="card flex bg-donker hover:shadow-[0px_1px_15px_5px_rgba(128,128,128,0.8)] hover:-translate-y-2 cursor-pointer shadow-[0px_1px_5px_0px_#000] w-40 h-40 sm:w-55 sm:h-55 md:w-40 md:h-60 lg:w-55 lg:h-40 p-5 mx-5 rounded-md items-center justify-center transition-all duration-500 ease-in-out">
+          <img src="dist/image/laravel.png" alt="">
+        </div>
+      </div>
     </div>
   </section>
   <!-- Skills End -->
@@ -334,116 +388,142 @@
   <!-- Experience Start -->
   <section id="experience" class="pt-36 pb-28 bg-dark md:pt-30 sm:pt-28">
     <div class="container">
-        <div class="w-full mx-0">
-          <!-- <div class="max-w-2xl mx-auto text-center items-center mb-16 relative">
+      <div class="w-full mx-0">
+        <!-- <div class="max-w-2xl mx-auto text-center items-center mb-16 relative">
             <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-7xl">🏢 Work Experiences
               <img src="dist/image/vector-experience.svg" alt="brush" class="absolute top-0 right-0 transform translate-x-full -translate-y-1/2 w-15 lg:w-17">
             </h2>
             <p class="font-medium text-md text-secondary md:text-lg lg:text-2xl">Here are some of the projects that I have made by combining several related lessons and developing the knowledge I have.</p>
           </div> -->
-          <div class="w-full mx-0">
-            <div class="max-w-3xl mx-auto text-center mb-16 relative">
-              <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-7xl">🏢 Work Experiences      
-                <img src="dist/image/vector-experience.svg" alt="brush" class="absolute top-0 right-0 transform translate-x-full -translate-y-1/2 w-15 lg:w-17">
-              </h2>
+        <div class="w-full mx-0">
+          <div class="max-w-3xl mx-auto text-center mb-16 relative">
+            <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-7xl">🏢 Work Experiences
+              <img src="dist/image/vector-experience.svg" alt="brush"
+                class="absolute top-0 right-0 transform translate-x-full -translate-y-1/2 w-15 lg:w-17">
+            </h2>
+          </div>
+          <div class="max-w-6xl mx-auto text-center mb-16 relative">
+            <p class="font-medium text-md text-slate-300 md:px-14 md:text-lg lg:px-14 max-w-7xl">I have gained valuable
+              experience by actively contributing to the growth of an educational startup and interning at a reputable
+              software house, where I worked as a skilled full-stack web developer.</p>
+          </div>
+          <div class="max-w-6xl mx-auto lg:px-12 mt-16 relative">
+            <div class="flex md:items-center justify-between">
+              <div class="flex">
+                <img src="dist/image/textilindo-logo.png" class="md:block hidden lg:h-20 lg:w-20 rounded-full"
+                  alt="PT.Textilindo">
+                <div class="space-y-1 mt-6 mx-3">
+                  <a href="https://dev-next.wijayacorp.com/">
+                    <h3 class="font-semibold text-xl md:text-md text-slate-400">PT. Textilindo</h3>
+                  </a>
+                  <p class="font-medium text-lg text-slate-400">IT Support & IT Developer</p>
+                </div>
+              </div>
+              <p class="bottom-0 font-semibold text-lg text-slate-400">Feb 2025 - Recent</p>
             </div>
-            <div class="max-w-6xl mx-auto text-center mb-16 relative">
-              <p class="font-medium text-md text-slate-300 md:px-14 md:text-lg lg:px-14 max-w-7xl">I have gained valuable experience by actively contributing to the growth of an educational startup and interning at a reputable software house, where I worked as a skilled full-stack web developer.</p>
-            </div>
-            <div class="max-w-6xl mx-auto lg:px-12 mt-16 relative">
-              <div class="flex md:items-center justify-between">
-                <div class="flex">
-                  <img src="dist/image/textilindo-logo.png" class="md:block hidden lg:h-20 lg:w-20 rounded-full" alt="PT.Textilindo">
-                  <div class="space-y-1 mt-6 mx-3">
-                    <a href="https://dev-next.wijayacorp.com/">
-                      <h3 class="font-semibold text-xl md:text-md text-slate-400">PT. Textilindo</h3>
-                    </a>
-                    <p class="font-medium text-lg text-slate-400">IT Support & IT Developer</p>
-                  </div>
-                </div>
-                <p class="bottom-0 font-semibold text-lg text-slate-400">Feb 2025 - Recent</p>
+            <div class="flex items-center gap-2 flex-wrap mt-4">
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>Next.JS</span>
               </div>
-              <div class="flex items-center gap-2 flex-wrap mt-4">
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>Next.JS</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>Python</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>Kotlin</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>Supabase</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>HTML</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>CSS</span>
-                </div>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>Python</span>
               </div>
-              <div class="space-y-3">
-                <h3 class="font-semibold text-lg text-slate-400 mt-4">The responsibilities include :</h3>
-                <ul class="list-disc space-y-2 mx-4">
-                  <li class="font-medium text-md text-slate-400">Played an active role in the development team with a focus on creating, testing, and launching web- based applications.</li>
-                  <li class="font-medium text-md text-slate-400">Directly involved in the application design and development process, with significant contributions in the development of new features and bug mitigation.</li>
-                  <li class="font-medium text-md text-slate-400">Consistently applying MVC and clean architecture design patterns to improve the structure and quality of website applications.</li>
-                  <li class="font-medium text-md text-slate-400">Holds full responsibility for ensuring the application is ready to be published on the hosting server.</li>
-                </ul>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>Kotlin</span>
               </div>
-            </div>
-            <div class="max-w-6xl mx-auto lg:px-12 mt-16 relative">
-              <div class="flex md:items-center justify-between">
-                <div class="flex">
-                  <img src="dist/image/natusi.png" class="md:block hidden lg:h-20 lg:w-20" alt="">
-                  <div class="space-y-1 mt-6 mx-3">
-                    <a href="https://natusi.co.id/">
-                      <h3 class="font-semibold text-xl md:text-md text-slate-400">CV. Natusi</h3>
-                    </a>
-                    <p class="font-medium text-lg text-slate-400">Fullstack Web Developer</p>
-                  </div>
-                </div>
-                <p class="bottom-0 font-semibold text-lg text-slate-400">Jul 2023 - Jan 2025</p>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>Supabase</span>
               </div>
-              <div class="flex items-center gap-2 flex-wrap mt-4">
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>Laravel</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>Javascript</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>PHP</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>PostgreeSQL</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>HTML</span>
-                </div>
-                <div class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
-                  <span>CSS</span>
-                </div>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>HTML</span>
               </div>
-              <div class="space-y-3">
-                <h3 class="font-semibold text-lg text-slate-400 mt-4">The responsibilities include :</h3>
-                <ul class="list-disc space-y-2 mx-4">
-                  <li class="font-medium text-md text-slate-400">Played an active role in the development team with a focus on creating, testing, and launching web- based applications.</li>
-                  <li class="font-medium text-md text-slate-400">Directly involved in the application design and development process, with significant contributions in the development of new features and bug mitigation.</li>
-                  <li class="font-medium text-md text-slate-400">Consistently applying MVC and clean architecture design patterns to improve the structure and quality of website applications.</li>
-                  <li class="font-medium text-md text-slate-400">Holds full responsibility for ensuring the application is ready to be published on the hosting server.</li>
-                </ul>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>CSS</span>
               </div>
             </div>
+            <div class="space-y-3">
+              <h3 class="font-semibold text-lg text-slate-400 mt-4">The responsibilities include :</h3>
+              <ul class="list-disc space-y-2 mx-4">
+                <li class="font-medium text-md text-slate-400">Played an active role in the development team with a
+                  focus on creating, testing, and launching web- based applications.</li>
+                <li class="font-medium text-md text-slate-400">Directly involved in the application design and
+                  development process, with significant contributions in the development of new features and bug
+                  mitigation.</li>
+                <li class="font-medium text-md text-slate-400">Consistently applying MVC and clean architecture design
+                  patterns to improve the structure and quality of website applications.</li>
+                <li class="font-medium text-md text-slate-400">Holds full responsibility for ensuring the application is
+                  ready to be published on the hosting server.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="max-w-6xl mx-auto lg:px-12 mt-16 relative">
+            <div class="flex md:items-center justify-between">
+              <div class="flex">
+                <img src="dist/image/natusi.png" class="md:block hidden lg:h-20 lg:w-20" alt="">
+                <div class="space-y-1 mt-6 mx-3">
+                  <a href="https://natusi.co.id/">
+                    <h3 class="font-semibold text-xl md:text-md text-slate-400">CV. Natusi</h3>
+                  </a>
+                  <p class="font-medium text-lg text-slate-400">Fullstack Web Developer</p>
+                </div>
+              </div>
+              <p class="bottom-0 font-semibold text-lg text-slate-400">Jul 2023 - Jan 2025</p>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap mt-4">
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>Laravel</span>
+              </div>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>Javascript</span>
+              </div>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>PHP</span>
+              </div>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>PostgreeSQL</span>
+              </div>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>HTML</span>
+              </div>
+              <div
+                class="bg-donker text-slate-500 text-sm border rounded-3xl border-slate-500 px-3 py-1 justify-center flex-shrink-0">
+                <span>CSS</span>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <h3 class="font-semibold text-lg text-slate-400 mt-4">The responsibilities include :</h3>
+              <ul class="list-disc space-y-2 mx-4">
+                <li class="font-medium text-md text-slate-400">Played an active role in the development team with a
+                  focus on creating, testing, and launching web- based applications.</li>
+                <li class="font-medium text-md text-slate-400">Directly involved in the application design and
+                  development process, with significant contributions in the development of new features and bug
+                  mitigation.</li>
+                <li class="font-medium text-md text-slate-400">Consistently applying MVC and clean architecture design
+                  patterns to improve the structure and quality of website applications.</li>
+                <li class="font-medium text-md text-slate-400">Holds full responsibility for ensuring the application is
+                  ready to be published on the hosting server.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
   </section>
   <!-- Experience End -->
 
   <!-- Resume Start -->
-    <!-- <section id="resume" class="pt-36 pb-32 bg-dark">
+  <!-- <section id="resume" class="pt-36 pb-32 bg-dark">
       <div class="container">
         <div class="w-full mx-0">
           <div class="flex justify-center">
@@ -455,7 +535,7 @@
   <!-- Resume End -->
 
   <!-- Message Start -->
-   <section id="message" class="pt-36 pb-8 bg-dark">
+  <section id="message" class="pt-36 pb-8 bg-dark">
     <div class="container">
       <div class="w-full mx-auto lg:px-14">
         <div class="flex flex-wrap justify-center">
@@ -467,36 +547,40 @@
               <div class="lg:col-span-1">
                 <label for="first-name" class="block text-sm/6 font-medium text-slate-400">Full name</label>
                 <div class="mt-2">
-                  <input type="text" name="fullname" id="fullname" value="" autocomplete="given-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
+                  <input type="text" name="fullname" id="fullname" value="" autocomplete="given-name"
+                    class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
                 </div>
               </div>
               <div class="lg:col-span-1">
                 <label for="last-name" class="block text-sm/6 font-medium text-slate-400">Email</label>
                 <div class="mt-2">
-                  <input type="email" name="email" id="email" autocomplete="family-name" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
+                  <input type="email" name="email" id="email" autocomplete="family-name"
+                    class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6">
                 </div>
               </div>
               <div class="lg:col-span-2">
                 <label for="email" class="block text-sm/6 font-medium text-slate-400">Message</label>
                 <div class="mt-2">
-                  <textarea name="message" id="message" rows="6" class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6"></textarea>
+                  <textarea name="message" id="message" rows="6"
+                    class="block w-full rounded-md bg-transparent px-3 py-1.5 text-base text-white border-2 border-slate-400 placeholder:text-white sm:text-sm/6"></textarea>
                 </div>
               </div>
             </div>
           </div>
           <!-- <button type="submit" class="mt-8 flex rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-300 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-slate-400"> <svg class="animate-spin h-5 w-5 mr-3 text-white fill-current" viewBox="0 0 24 24">
           </svg> Send Message <img src="dist/image/ic_telegram.svg" class="px-2" alt=""> </button> -->
-          <button type="button" onclick="sendToSpreadshet()" class="mt-8 flex rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-300 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-slate-400">
-            Send Message 
-            <img src="dist/image/ic_telegram.svg" class="px-2" alt=""> 
+          <button type="button" onclick="sendToSpreadshet()"
+            class="mt-8 flex rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-slate-300 shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 border-2 border-slate-400">
+            Send Message
+            <img src="dist/image/ic_telegram.svg" class="px-2" alt="">
           </button>
-          
+
         </form>
       </div>
     </div>
   </section>
   <!-- Message End -->
-  
+
   <!-- Footer Start -->
   <section id="footer" class="pt-10 pb-10 bg-dark">
     <div class="containter">
@@ -505,11 +589,11 @@
         <div class="flex justify-between items-end">
           <!-- <p class="font-normal relative bottom-0 text-lg text-slate-300 md:text-sm">Fatkhan Akbar &copy; 2025 made with <span class="font-semibold text-md text-slate-300"><a href="https://tailwindcss.com">Tailwind CSS V3</a></span></p> -->
           <p class="font-normal relative bottom-0 text-sm sm:text-base md:text-lg text-slate-300 md:font-sm">
-            Fatkhan Akbar &copy; 2025 
+            Fatkhan Akbar &copy; 2025
             <span class="font-semibold text-sm sm:text-md text-slate-300">
-                <!-- <a href="https://tailwindcss.com">Tailwind CSS V3</a> -->
+              <!-- <a href="https://tailwindcss.com">Tailwind CSS V3</a> -->
             </span>
-        </p>        
+          </p>
           <div class="flex items-center lg:gap-4 gap-4">
             <a href="https://github.com/fatkhan05">
               <li>
@@ -536,19 +620,49 @@
       </div>
     </div>
 
-   </section>
+  </section>
   <!-- Footer End -->
 
   <!-- Arrow to Top Start -->
-   <a href="#home" id="to-top" class="arrow fixed bottom-0 right-0 cursor-pointer mr-5 mb-4 rounded-lg bg-white/60 border border-slate-200 opacity-0 transition-opacity duration-300">
-      <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17 15L12 10L7 15" stroke="rgb(71 85 105)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-   </a>
+  <a href="#home" id="to-top"
+    class="arrow fixed bottom-0 right-0 cursor-pointer mr-5 mb-4 rounded-lg bg-white/60 border border-slate-200 opacity-0 transition-opacity duration-300">
+    <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17 15L12 10L7 15" stroke="rgb(71 85 105)" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </a>
   <!-- Arrow to Top End -->
 
   <script src="./node_modules/preline/dist/preline.js"></script>
   <script>
+    // Sliding Pill Navbar Animation
+    document.addEventListener("DOMContentLoaded", function () {
+      const cursor = document.getElementById("nav-cursor");
+      const tabs = document.querySelectorAll("#nav-menu ul li.tab-item");
+      const navUl = document.querySelector("#nav-menu ul");
+
+      if (cursor && navUl) {
+        tabs.forEach((tab) => {
+          tab.addEventListener("mouseenter", () => {
+            const width = tab.offsetWidth;
+            const height = tab.offsetHeight;
+            const left = tab.offsetLeft;
+            const top = tab.offsetTop;
+
+            cursor.style.width = `${width}px`;
+            cursor.style.height = `${height}px`;
+            cursor.style.left = `${left}px`;
+            cursor.style.top = `${top}px`;
+            cursor.style.opacity = "1";
+          });
+        });
+
+        navUl.addEventListener("mouseleave", () => {
+          cursor.style.opacity = "0";
+        });
+      }
+    });
+
     document.addEventListener("DOMContentLoaded", function () {
       const icons = document.querySelectorAll(".social-icon");
       icons.forEach((icon, index) => {
@@ -582,7 +696,7 @@
     });
 
     // FORM KIRIM PESAN KE SPREADSHEET
-    function sendToSpreadshet() { 
+    function sendToSpreadshet() {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzbcWDpV188LGL1-5RXkT4TbOBjDRWuENYq5ftJawhaT3wsgzIBjfKHv2GPMp-xXfCUxw/exec'
       const form = document.forms['submit-to-google-sheet']
 
@@ -592,15 +706,15 @@
       var messageInput = document.getElementById('message').value();
 
       console.log(fullnameInput);
-      
-      
+
+
     }
 
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
     hamburger.addEventListener('click', (e) => {
-      e.stopPropagation(); 
+      e.stopPropagation();
       mobileMenu.classList.toggle('hidden');
     });
 
@@ -627,11 +741,11 @@
         }
       });
     });
-    
+
 
     // Typing animation for hero text
     const textParts = [
-      { text: "Web Developer With ±2 years", bold: true },
+      { text: "Software Engineer With ±3 years", bold: true },
       { text: " of experience in web applications." },
       "<br>",
       { text: "Currently transitioning to Fullstack Developer." }
@@ -742,7 +856,7 @@
   </script>
   <script type="text/javascript">
     // FORM KIRIM PESAN KE SPREADSHEET
-    function sendToSpreadshet() { 
+    function sendToSpreadshet() {
       const scriptURL = 'https://script.google.com/macros/s/AKfycbzbcWDpV188LGL1-5RXkT4TbOBjDRWuENYq5ftJawhaT3wsgzIBjfKHv2GPMp-xXfCUxw/exec'
       const form = document.forms['submit-to-google-sheet']
 
@@ -752,9 +866,10 @@
       var messageInput = document.getElementById('message');
 
       console.log(fullnameInput);
-      
-      
+
+
     }
   </script>
 </body>
+
 </html>
