@@ -78,6 +78,112 @@
         opacity: 0;
       }
     }
+
+    /* ===== Mobile Sidebar ===== */
+    #sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 40;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    #sidebar-overlay.open {
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    #mobile-sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 50vw;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-left: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: none;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 80px 32px 40px;
+      gap: 0;
+    }
+
+    .dark #mobile-sidebar {
+      background: rgba(15, 23, 42, 0.92);
+      border-left: 1px solid rgba(51, 65, 85, 0.5);
+    }
+
+    #mobile-sidebar.open {
+      transform: translateX(0);
+      box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Hamburger → X animation */
+    #hamburger-icon span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: rgb(100 116 139);
+      border-radius: 2px;
+      transition: transform 0.35s ease, opacity 0.25s ease;
+      transform-origin: center;
+    }
+
+    #hamburger-icon.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    #hamburger-icon.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    #hamburger-icon.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Sidebar nav links stagger animation */
+    #mobile-sidebar .sidebar-link {
+      opacity: 0;
+      transform: translateX(24px);
+      transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+    }
+
+    #mobile-sidebar.open .sidebar-link {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    #mobile-sidebar.open .sidebar-link:nth-child(1) {
+      transition-delay: 0.10s;
+    }
+
+    #mobile-sidebar.open .sidebar-link:nth-child(2) {
+      transition-delay: 0.16s;
+    }
+
+    #mobile-sidebar.open .sidebar-link:nth-child(3) {
+      transition-delay: 0.22s;
+    }
+
+    #mobile-sidebar.open .sidebar-link:nth-child(4) {
+      transition-delay: 0.28s;
+    }
+
+    #mobile-sidebar.open .sidebar-link:nth-child(5) {
+      transition-delay: 0.34s;
+    }
+
+    #mobile-sidebar.open .sidebar-link:nth-child(6) {
+      transition-delay: 0.40s;
+    }
   </style>
 </head>
 
@@ -134,37 +240,55 @@
           </nav>
         </div>
 
-        <!-- Hamburger Menu -->
-        <div id="hamburger" class="ml-auto h-55 w-55 p-1 rounded-md border border-slate-300 lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-            stroke="rgb(226 232 240)">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </div>
+        <!-- Hamburger Button (mobile only) -->
+        <button id="hamburger" aria-label="Toggle menu"
+          class="ml-auto flex flex-col gap-[6px] justify-center items-center w-10 h-10 rounded-lg lg:hidden focus:outline-none">
+          <div id="hamburger-icon">
+            <span></span>
+            <span class="my-[6px]"></span>
+            <span></span>
+          </div>
+        </button>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu"
-          class="hidden absolute right-0 mr-4 top-16 w-1/2 rounded-xl bg-white/60 text-end py-4 px-8 shadow-xl lg:hidden">
-          <ul class="space-y-2">
-            <li><a href="#home" class="block py-2 hover:text-gray-400">Home</a></li>
-            <li><a href="#about" class="block py-2 hover:text-gray-400">About Me</a></li>
-            <li><a href="#portfolio" class="block py-2 hover:text-gray-400">Portfolio</a></li>
-            <li><a href="#clients" class="block py-2 hover:text-gray-400">Skills</a></li>
-            <li><a href="#experience" class="block py-2 hover:text-gray-400">Experience</a></li>
-            <li><a href="#message" class="block py-2 hover:text-gray-400">Contact</a></li>
-          </ul>
-        </div>
-        <!-- </div> -->
       </div>
     </div>
   </header>
   <!-- Header End -->
 
+  <!-- Sidebar Backdrop -->
+  <div id="sidebar-overlay"></div>
+
+  <!-- Mobile Sidebar -->
+  <aside id="mobile-sidebar" aria-hidden="true">
+    <!-- Close Button -->
+    <button id="sidebar-close" aria-label="Close menu"
+      class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors duration-200">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="rgb(100 116 139)"
+        stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <a href="#home"
+      class="sidebar-link text-slate-700 dark:text-slate-200 text-lg font-bold uppercase tracking-widest py-4 border-b border-slate-200/60 dark:border-slate-700/60 hover:text-primary dark:hover:text-primary">Home</a>
+    <a href="#about"
+      class="sidebar-link text-slate-700 dark:text-slate-200 text-lg font-bold uppercase tracking-widest py-4 border-b border-slate-200/60 dark:border-slate-700/60 hover:text-primary dark:hover:text-primary">About
+      Me</a>
+    <a href="#portfolio"
+      class="sidebar-link text-slate-700 dark:text-slate-200 text-lg font-bold uppercase tracking-widest py-4 border-b border-slate-200/60 dark:border-slate-700/60 hover:text-primary dark:hover:text-primary">Portfolio</a>
+    <a href="#clients"
+      class="sidebar-link text-slate-700 dark:text-slate-200 text-lg font-bold uppercase tracking-widest py-4 border-b border-slate-200/60 dark:border-slate-700/60 hover:text-primary dark:hover:text-primary">Skills</a>
+    <a href="#experience"
+      class="sidebar-link text-slate-700 dark:text-slate-200 text-lg font-bold uppercase tracking-widest py-4 border-b border-slate-200/60 dark:border-slate-700/60 hover:text-primary dark:hover:text-primary">Experience</a>
+    <a href="#message"
+      class="sidebar-link text-slate-700 dark:text-slate-200 text-lg font-bold uppercase tracking-widest py-4 hover:text-primary dark:hover:text-primary">Contact</a>
+  </aside>
+
   <!-- Hero Start -->
   <img src="dist/image/ellipse.svg" class="absolute top-0 left-1/2 -translate-x-1/2 lg:w-100 lg:h-100" alt="">
   <section id="home" class="h-screen w-full flex items-center justify-center pt-20 dark:bg-dark">
     <div class="container relative w-full flex flex-col items-center justify-center">
-      <div class="flex flex-col justify-center items-center text-center relative z-10">
+      <div class="flex flex-col justify-center items-center text-center relative z-[45]">
         <h3>
           <span class="block text-secondary text-2xl font-bold mt-1 lg:text-7xl dark:text-white">Fatkhan Akbar.</span>
         </h3>
@@ -181,12 +305,12 @@
         <div class="flex flex-wrap justify-center gap-4 mt-8">
           <a href="https://docs.google.com/document/d/1YgyiCLXqUeX-twrZF0PRsZxu3qTTPvNJ/edit?usp=sharing&ouid=117972658878514985190&rtpof=true&sd=true"
             target="_blank"
-            class="px-8 py-3 text-base font-semibold text-white bg-slate-800 dark:bg-white dark:text-slate-900 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+            class="px-4 py-1.5 text-xs lg:px-8 lg:py-3 lg:text-base font-semibold text-white bg-slate-800 dark:bg-white dark:text-slate-900 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
             Download CV
           </a>
           <a href="https://wa.me/6282264910605?text=Halo%20Fatkhan%2C%20saya%20tertarik%20untuk%20mengajak%20Anda%20bekerja%20sama%20dalam%20sebuah%20project%20atau%20menawarkan%20sebuah%20opportunity.%20Apakah%20kita%20bisa%20berdiskusi%20lebih%20lanjut%3F"
             target="_blank"
-            class="px-8 py-3 text-base font-semibold text-slate-800 dark:text-white bg-transparent border-2 border-slate-800 dark:border-white rounded-full shadow-md hover:bg-slate-800 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+            class="px-4 py-1.5 text-xs lg:px-8 lg:py-3 lg:text-base font-semibold text-slate-800 dark:text-white bg-transparent border-2 border-slate-800 dark:border-white rounded-full shadow-md hover:bg-slate-800 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
             Contact Me
           </a>
         </div>
@@ -194,19 +318,21 @@
       <div class="flex justify-center tech-stack pt-10 gap-5 lg:gap-20 mb-4">
         <a href="https://github.com/fatkhan05" class="social-icon opacity-0"
           style="transition: opacity 0.6s ease-in-out;">
-          <img src="dist/image/github.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="GitHub">
+          <img src="dist/image/github.svg" class="w-[60px] h-[60px] lg:w-[90px] lg:h-[90px]" alt="GitHub">
         </a>
         <a href="https://medium.com/@fatkhanakbar" class="social-icon opacity-0"
           style="transition: opacity 0.6s ease-in-out;">
-          <img src="dist/image/medium.svg" class="lg:mt-20 mt-10 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Medium">
+          <img src="dist/image/medium.svg" class="lg:mt-20 mt-10 w-[60px] h-[60px] lg:w-[90px] lg:h-[90px]"
+            alt="Medium">
         </a>
         <a href="https://www.linkedin.com/in/fatkhanakbar/" class="social-icon opacity-0"
           style="transition: opacity 0.6s ease-in-out;">
-          <img src="dist/image/linkedin2.svg" class="lg:mt-20 mt-10 w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="LinkedIn">
+          <img src="dist/image/linkedin2.svg" class="lg:mt-20 mt-10 w-[60px] h-[60px] lg:w-[90px] lg:h-[90px]"
+            alt="LinkedIn">
         </a>
         <a href="mailto:fatkhanakbar46@gmail.com" class="social-icon opacity-0"
           style="transition: opacity 0.6s ease-in-out;">
-          <img src="dist/image/email.svg" class="w-10 h-10 lg:w-[90px] lg:h-[90px]" alt="Email">
+          <img src="dist/image/email.svg" class="w-[60px] h-[60px] lg:w-[90px] lg:h-[90px]" alt="Email">
         </a>
       </div>
     </div>
@@ -675,6 +801,55 @@
   <!-- Arrow to Top End -->
 
   <script>
+    // ===== Mobile Sidebar Toggle =====
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      const sidebar = document.getElementById("mobile-sidebar");
+      const overlay = document.getElementById("sidebar-overlay");
+      const sidebarLinks = document.querySelectorAll("#mobile-sidebar .sidebar-link");
+
+      function openSidebar() {
+        sidebar.classList.add("open");
+        overlay.classList.add("open");
+        hamburgerIcon.classList.add("open");
+        sidebar.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeSidebar() {
+        sidebar.classList.remove("open");
+        overlay.classList.remove("open");
+        hamburgerIcon.classList.remove("open");
+        sidebar.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      hamburger.addEventListener("click", function () {
+        sidebar.classList.contains("open") ? closeSidebar() : openSidebar();
+      });
+
+      overlay.addEventListener("click", closeSidebar);
+
+      const closeBtn = document.getElementById("sidebar-close");
+      if (closeBtn) closeBtn.addEventListener("click", closeSidebar);
+
+      // Close sidebar when clicking anywhere outside sidebar or hamburger
+      document.addEventListener("click", function (e) {
+        if (
+          sidebar.classList.contains("open") &&
+          !sidebar.contains(e.target) &&
+          !hamburger.contains(e.target)
+        ) {
+          closeSidebar();
+        }
+      });
+
+      sidebarLinks.forEach(function (link) {
+        link.addEventListener("click", closeSidebar);
+      });
+    });
+
     // Sliding Pill Navbar Animation
     document.addEventListener("DOMContentLoaded", function () {
       const cursor = document.getElementById("nav-cursor");
